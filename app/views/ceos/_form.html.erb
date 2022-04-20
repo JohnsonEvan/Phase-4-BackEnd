@@ -1,0 +1,42 @@
+<%= form_with(model: ceo) do |form| %>
+  <% if ceo.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ceo.errors.count, "error") %> prohibited this ceo from being saved:</h2>
+
+      <ul>
+        <% ceo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :compnay_name, style: "display: block" %>
+    <%= form.text_field :compnay_name %>
+  </div>
+
+  <div>
+    <%= form.label :position, style: "display: block" %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div>
+    <%= form.label :salary, style: "display: block" %>
+    <%= form.number_field :salary %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_birth, style: "display: block" %>
+    <%= form.date_field :date_of_birth %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

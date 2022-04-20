@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @ceo %>
+
+<div>
+  <%= link_to "Edit this ceo", edit_ceo_path(@ceo) %> |
+  <%= link_to "Back to ceos", ceos_path %>
+
+  <%= button_to "Destroy this ceo", @ceo, method: :delete %>
+</div>
