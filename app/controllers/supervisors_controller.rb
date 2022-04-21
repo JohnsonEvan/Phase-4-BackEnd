@@ -4,10 +4,13 @@ class SupervisorsController < ApplicationController
   # GET /supervisors or /supervisors.json
   def index
     @supervisors = Supervisor.all
+    render json: @supervisors
   end
 
   # GET /supervisors/1 or /supervisors/1.json
   def show
+    selected_Supervisor = Supervisor.find(params[:id])
+    render json: selected_Supervisor
   end
 
   # GET /supervisors/new

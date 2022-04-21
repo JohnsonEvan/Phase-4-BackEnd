@@ -4,10 +4,13 @@ class ManagersController < ApplicationController
   # GET /managers or /managers.json
   def index
     @managers = Manager.all
+    render json: @managers
   end
 
   # GET /managers/1 or /managers/1.json
   def show
+    selected_Manager = Manager.find(params[:id])
+    render json: selected_Manager
   end
 
   # GET /managers/new

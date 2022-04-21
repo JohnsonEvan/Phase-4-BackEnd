@@ -4,6 +4,7 @@ class CeosController < ApplicationController
   # GET /ceos or /ceos.json
   def index
     @ceos = Ceo.all
+    render json: @ceos
   end
 
   # GET /ceos/1 or /ceos/1.json

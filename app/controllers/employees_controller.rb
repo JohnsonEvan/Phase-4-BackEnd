@@ -4,10 +4,13 @@ class EmployeesController < ApplicationController
   # GET /employees or /employees.json
   def index
     @employees = Employee.all
+    render json: @employees
   end
 
   # GET /employees/1 or /employees/1.json
   def show
+    selected_Employee = Employee.find(params[:id])
+    render json: selected_Employee
   end
 
   # GET /employees/new
