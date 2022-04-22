@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_20_182124) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_22_151848) do
   create_table "ceos", force: :cascade do |t|
     t.string "name"
     t.string "company_name"
@@ -44,6 +44,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_20_182124) do
     t.date "date_of_birth"
     t.integer "ceo_id"
     t.index ["ceo_id"], name: "index_supervisors_on_ceo_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

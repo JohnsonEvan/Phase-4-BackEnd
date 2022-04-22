@@ -10,7 +10,9 @@ class SupervisorsController < ApplicationController
   # GET /supervisors/1 or /supervisors/1.json
   def show
     selected_Supervisor = Supervisor.find(params[:id])
-    render json: selected_Supervisor
+    render json: selected_Supervisor.to_json(
+      :include => {:managers => { :include => :employees }}
+    )
   end
 
   # GET /supervisors/new

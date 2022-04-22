@@ -10,7 +10,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1 or /employees/1.json
   def show
     selected_Employee = Employee.find(params[:id])
-    render json: selected_Employee
+    render json: selected_Employee, serializer: EmployeesManagerSerializer
   end
 
   # GET /employees/new
